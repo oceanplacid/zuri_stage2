@@ -9,7 +9,7 @@
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 
-	<!--<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" /> -->
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="{% static 'css/resume.css' %}" media="all" />
 
 </head>
@@ -151,6 +151,36 @@
 		<div id="ft">
 			<p>Hanif Effah Dadzie &mdash; <a href="mailto:dadziehanif@gmail.com">dadziehanif@gmail.com</a> &mdash; +233268268289</p>
 		</div><!--// footer -->
+		<center>
+		<div>
+		<h1>Contact Me</h1>
+		</div>
+		<div>
+
+		<form action = "{% url 'home' %}" method=POST>
+			{% csrf_token %}
+
+			{{ form.as_p }}
+			<div><h2>Thank you, {{sub_message}}<h2></div>
+			<div>
+				<input type = "text" name = "Name" placeholder="Name">
+			</div>
+			<div>
+			<input type = "email" name = "Email" placeholder="Email">
+		    </div>
+			<div>
+			<input type = "textarea" name = "Phone" placeholder="Phone Number">
+		    </div>
+		    <div>
+			<textarea name="message" rows="3" cols="22" placeholder="Leave a Message"></textarea>
+		    </div>
+		    <div>
+			<input type = "submit" Value = "Submit" class="btn btn-secondary">
+		    </div>
+		</form>
+	    </div>
+		<center>
+
 
 	</div><!-- // inner -->
 
